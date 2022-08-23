@@ -250,7 +250,7 @@ function history_sync_push() {
             case "$commit" in
                 [Yy]* )
                     DIR=$(pwd)
-                    cd "$ZSH_HISTORY_PROJ" && "$GIT" add * && "$GIT" commit -m "$ZSH_HISTORY_COMMIT_MSG"
+                    cd "$ZSH_HISTORY_PROJ" && "$GIT" add -A && "$GIT" commit -m "$ZSH_HISTORY_COMMIT_MSG"
 
                     if [[ $force = false ]]; then
                         echo -n "$bold_color${fg[yellow]}Do you want to push to remote (y/N)?$reset_color "
